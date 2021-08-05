@@ -2,8 +2,9 @@
 
 A simple queue implementation.
 
-Included are 4 implementations offering the same API:
+Included are 5 implementations offering the same API:
 
+* `HashIndexedQueue`
 * `HashLinkedQueue`
 * `MapIndexedQueue`
 * `MapLinkedQueue`
@@ -11,22 +12,22 @@ Included are 4 implementations offering the same API:
 
 All 4 implementations leverage non-sequential memory.
 
+
 ## Performance
 
-`MapIndexedQueue` is **significantly** the most performant, and SetQueue is _by far_ the least performant:
-
-
+`MapIndexedQueue` is **significantly** the most performant, and `SetQueue` and especially `HashIndexedQueue` are _by far_ the least performant:
 
 ```console
 $> npm run benchmark
 ```
 
-Variant | ops/sec<br />(more is better) | % variance<br />(less is better) | runs completed<br />(more is better)
+Variant | ops/sec<br />(more is better) | <abbr title="Relative Margin of Error (% of mean)">RME</abbr><br />(less is better) | runs completed<br />(more is better)
 :-- | --: | --: | --:
-MapIndexedQueue | 1,293 | ±0.29% | 92
-MapLinkedQueue | 426 | ±0.10% | 92
-HashLinkedQueue | 399 | ±0.18% | 90
-SetQueue | 61.23 | ±0.13% | 64
+MapIndexedQueue | 1,329 | ±0.27% | 93
+MapLinkedQueue | 426 | ±0.21% | 92
+HashLinkedQueue | 434 | ±0.21% | 89
+SetQueue | 61.01 | ±0.07% | 63
+HashIndexedQueue | 2.65 | ±0.38% | 11
 
 ## Useage
 
