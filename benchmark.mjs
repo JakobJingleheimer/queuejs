@@ -1,7 +1,7 @@
 import Benchmark from 'benchmark';
 
 // bestiejs/benchmark.js#issues/51
-global.HashQueue = await import('./HashQueue.js').then((module) => module.default);
+global.HashLinkedQueue = await import('./HashLinkedQueue.js').then((module) => module.default);
 global.MapLinkedQueue = await import('./MapLinkedQueue.js').then((module) => module.default);
 global.MapIndexedQueue = await import('./MapIndexedQueue.js').then((module) => module.default);
 global.SetQueue = await import('./SetQueue.js').then((module) => module.default);
@@ -18,10 +18,10 @@ function setup() {
 
 suite
 	.add({
-		name: 'HashQueue',
+		name: 'HashLinkedQueue',
 		setup,
 		fn() {
-			const q = new HashQueue(items);
+			const q = new HashLinkedQueue(items);
 
 			while (q.deque()) ;
 		}

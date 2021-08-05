@@ -1,22 +1,12 @@
+import Hashmap from './Hash.js';
 import QueueItem from './QueueItem.js';
-
-class Hashmap {
-	get size() {
-		return Object.keys(this).length;
-	}
-
-	constructor(init = {}) {
-		Object.assign(this, init);
-	}
-}
-Hashmap.prototype.__proto__ = null; // chromium / v8 bug #5115
 
 /**
  * A simple lookup-efficient & space-efficient first-in, first-out (FIFO) list. Item storage
  * leverages a hashmap (non-contiguous memory storage) of interlinked items: Each item points to
  * the next in the queue via a `next` property.
  */
-export default class HashQueue {
+export default class HashLinkedQueue {
 	#head = null;
 	#items = new Hashmap();
 
@@ -67,7 +57,7 @@ export default class HashQueue {
 			i--
 		) {
 			item = this.#items[i] = new QueueItem(items[i]);
-			item.next = this.#items[i+1] || null;
+			item.next = this.#items[i + 1] || null;
 		}
 
 		this.#head ??= item;
@@ -75,4 +65,4 @@ export default class HashQueue {
 		return this.#items.size;
 	}
 }
-HashQueue.prototype.__proto__ = null; // chromium / v8 bug #5115
+HashLinkedQueue.prototype.__proto__ = null; // chromium / v8 bug #5115

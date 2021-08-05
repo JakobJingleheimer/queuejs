@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import HashQueue from './HashQueue.js';
+import HashLinkedQueue from './HashLinkedQueue.js';
 import MapLinkedQueue from './MapLinkedQueue.js';
 import MapIndexedQueue from './MapIndexedQueue.js';
 import SetQueue from './SetQueue.js';
@@ -65,7 +65,7 @@ function test(Queue) {
 	});
 }
 
-test(HashQueue);
+test(HashLinkedQueue);
 test(MapLinkedQueue);
 test(MapIndexedQueue);
 test(SetQueue);

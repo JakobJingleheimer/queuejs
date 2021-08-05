@@ -4,7 +4,7 @@ A simple queue implementation.
 
 Included are 4 implementations offering the same API:
 
-* `HashQueue`
+* `HashLinkedQueue`
 * `MapIndexedQueue`
 * `MapLinkedQueue`
 * `SetQueue`
@@ -25,7 +25,7 @@ Variant | ops/sec<br />(more is better) | % variance<br />(less is better) | run
 :-- | --: | --: | --:
 MapIndexedQueue | 1,293 | ±0.29% | 92
 MapLinkedQueue | 426 | ±0.10% | 92
-HashQueue | 399 | ±0.18% | 90
+HashLinkedQueue | 399 | ±0.18% | 90
 SetQueue | 61.23 | ±0.13% | 64
 
 ## Useage
