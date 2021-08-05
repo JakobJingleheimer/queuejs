@@ -12,6 +12,7 @@ Included are 5 implementations offering the same API:
 
 All 4 implementations leverage non-sequential memory.
 
+Queues named with "Linked" are slightly opinionated, requiring their items to have `id` and `value` properties.
 
 ## Performance
 

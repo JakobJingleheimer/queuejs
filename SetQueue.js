@@ -26,8 +26,7 @@ export default class SetQueue {
 
 	/**
 	 * Append item(s) to the queue
-	 * @param {...*} items The item(s) to append. At a minimum, item(s) must have `id` and `value`
-	 * properties.
+	 * @param {...*} items The item(s) to append.
 	 * @returns {integer} The (updated) number of items in the queue.
 	 */
 	enque(...items) {
