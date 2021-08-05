@@ -1,4 +1,4 @@
-export default class MapIteratedQueue {
+export default class MapIndexedQueue {
 	#head;
 	#items = new Map();
 
@@ -58,4 +58,4 @@ export default class MapIteratedQueue {
 		return this.#items.size;
 	}
 }
-MapIteratedQueue.prototype.__proto__ = null; // chromium / v8 bug #5115
+MapIndexedQueue.prototype.__proto__ = null; // chromium / v8 bug #5115

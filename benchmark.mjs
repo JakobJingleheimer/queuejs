@@ -3,7 +3,7 @@ import Benchmark from 'benchmark';
 // bestiejs/benchmark.js#issues/51
 global.HashQueue = await import('./HashQueue.js').then((module) => module.default);
 global.MapLinkedQueue = await import('./MapLinkedQueue.js').then((module) => module.default);
-global.MapIteratedQueue = await import('./MapIteratedQueue.js').then((module) => module.default);
+global.MapIndexedQueue = await import('./MapIndexedQueue.js').then((module) => module.default);
 global.SetQueue = await import('./SetQueue.js').then((module) => module.default);
 
 
@@ -27,10 +27,10 @@ suite
 		}
 	})
 	.add({
-		name: 'MapIteratedQueue',
+		name: 'MapIndexedQueue',
 		setup,
 		fn() {
-			const q = new MapIteratedQueue(items);
+			const q = new MapIndexedQueue(items);
 
 			while (q.deque());
 		}
