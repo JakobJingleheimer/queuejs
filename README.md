@@ -15,19 +15,18 @@ All 4 implementations leverage non-sequential memory.
 
 `MapIndexedQueue` is **significantly** the most performant, and SetQueue is _by far_ the least performant:
 
+
+
 ```console
 $> npm run benchmark
-
-HashQueue x 399 ops/sec ±0.18% (90 runs sampled)
-
-MapIndexedQueue x 1,293 ops/sec ±0.29% (92 runs sampled)
-
-MapLinkedQueue x 426 ops/sec ±0.10% (92 runs sampled)
-
-SetQueue x 61.23 ops/sec ±0.13% (64 runs sampled)
-
-Fastest is MapIndexedQueue
 ```
+
+Variant | ops/sec<br />(more is better) | % variance<br />(less is better) | runs completed<br />(more is better)
+:-- | --: | --: | --:
+MapIndexedQueue | 1,293 | ±0.29% | 92
+MapLinkedQueue | 426 | ±0.10% | 92
+HashQueue | 399 | ±0.18% | 90
+SetQueue | 61.23 | ±0.13% | 64
 
 ## Useage
 
